@@ -1,5 +1,5 @@
 # cicd-buzz
-test repo for build pipeline
+test repo for build pipeline based on guide here: https://medium.com/bettercode/how-to-build-a-modern-ci-cd-pipeline-5faa01891a5b
 
 Code status: [![BCH compliance](https://bettercodehub.com/edge/badge/dtep100/cicd-buzz?branch=master)](https://bettercodehub.com/)
 
