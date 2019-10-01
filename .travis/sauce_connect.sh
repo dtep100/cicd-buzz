@@ -10,7 +10,8 @@
 # before_script:
 #   - curl https://gist.github.com/santiycr/5139565/raw/sauce_connect_setup.sh | bash
 
-CONNECT_URL="http://saucelabs.com/downloads/Sauce-Connect-latest.zip"
+CONNECT_URL="https://saucelabs.com/downloads/sc-4.5.4-linux32.tar.gz"
+#CONNECT_URL="https://saucelabs.com/downloads/sc-4.5.4-osx.zip"
 CONNECT_DIR="/tmp/sauce-connect-$RANDOM"
 CONNECT_DOWNLOAD="Sauce_Connect.zip"
 READY_FILE="connect-ready-$RANDOM"
