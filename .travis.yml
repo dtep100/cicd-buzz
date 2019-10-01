@@ -9,7 +9,7 @@ python:
   - "2.7"
 
 before_script:
-  - curl https://gist.github.com/santiycr/5139565/raw/sauce_connect_setup.sh | bash #open Sauce connector
+  - sh ./.travis/sauce_connect_setup.sh #open Sauce connector
   - python app.py & #launch the server in the background to allow selenium testing
   - sleep 3 # give application some time to start
 
