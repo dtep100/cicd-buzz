@@ -4,9 +4,7 @@ services:
   - docker
 
 addons:
-  sauce_connect:
-    username: "dtep100"
-    access_key: "1387ea2b-9f2f-4238-8111-56b835051648"
+  sauce_connect: true
 
 language: python
 
