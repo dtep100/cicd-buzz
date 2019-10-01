@@ -9,7 +9,7 @@ python:
   - "2.7"
 
 before_script:
-  - python /src/app.py #launch the server to allow selenium testing
+  - python app.py #launch the server to allow selenium testing
 
 script:
   - python -m pytest -v
