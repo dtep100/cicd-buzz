@@ -4,6 +4,7 @@ from selenium.webdriver.common.keys import Keys
 import subprocess
 import signal
 import urllib3
+import os
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
@@ -11,7 +12,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 # Local tests needing a web browser that should not run on the pipeline
 class TestBrowserBehaviour:
 
-    _use_remote_server = False
+    _use_remote_server = True
 
     @classmethod
     def setup_class(cls):
@@ -31,8 +32,12 @@ class TestBrowserBehaviour:
                 'build': "CI/CD Buzz build pipeline",
                 'name': "TestBrowserBehaviour tests",
             }
-            username = "dtep100"  # "SAUCE_USERNAME"
-            access_key = "1387ea2b-9f2f-4238-8111-56b835051648"  # "SAUCE_ACCESS_KEY"
+
+            #desired_cap["tunnel-identifier"] = os.environ["TRAVIS_JOB_NUMBER"]
+            # hub_url = "%s:%s@localhost:4445" % (username, access_key)
+            # driver = webdriver.Remote(desired_capabilities=capabilities, command_executor="http://%s/wd/hub" % hub_url)
+            username = os.environ["SAUCE_USERNAME"]
+            access_key = os.environ["SAUCE_ACCESS_KEY"]
             cls.driver = webdriver.Remote(
                 command_executor='https://{}:{}@ondemand.eu-central-1.saucelabs.com:443/wd/hub'.format(username,
                                                                                                        access_key),
@@ -48,7 +53,7 @@ class TestBrowserBehaviour:
             cls.driver.close()
         else:
             cls.driver.quit()
-            cls.driver.close()
+            #cls.driver.close()
 
     @classmethod
     def _launch_local_server(cls):

@@ -3,13 +3,18 @@ sudo: required
 services:
   - docker
 
+addons:
+  sauce_connect:
+    username: "dtep100"
+    access_key: "1387ea2b-9f2f-4238-8111-56b835051648"
+
 language: python
 
 python:
   - "2.7"
 
 script:
-  - python -m pytest -v -k "not TestBrowserBehaviour"
+  - python -m pytest -v
 
 after_success:
   - sh ./.travis/deploy_dockerhub.sh
