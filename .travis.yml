@@ -3,8 +3,7 @@ sudo: required
 services:
   - docker
 
-addons:
-  sauce_connect: false
+
 
 language: python
 
