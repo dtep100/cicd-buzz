@@ -12,13 +12,13 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 # Local tests needing a web browser that should not run on the pipeline
 class TestBrowserBehaviour:
 
-    _use_remote_server = True
-
     @classmethod
     def setup_class(cls):
         """ setup any state specific to the execution of the given class (which
         usually contains tests).
         """
+        cls._use_remote_server = os.environ["CI"]
+
         if not cls._use_remote_server:
             cls._launch_local_server()
             cls.driver = webdriver.Safari()
@@ -29,19 +29,21 @@ class TestBrowserBehaviour:
                 'platform': "Mac OS X 10.13",
                 'browserName': "safari",
                 'version': "11.1",
-                'build': "CI/CD Buzz build pipeline",
+                'build': os.environ["TRAVIS_BUILD_NUMBER"],
                 'name': "TestBrowserBehaviour tests",
+                'tags': [os.environ["TRAVIS_PYTHON_VERSION"], "CI"],
+                'tunnel-identifier': os.environ["TRAVIS_JOB_NUMBER"],
             }
 
-            #desired_cap["tunnel-identifier"] = os.environ["TRAVIS_JOB_NUMBER"]
-            # hub_url = "%s:%s@localhost:4445" % (username, access_key)
-            # driver = webdriver.Remote(desired_capabilities=capabilities, command_executor="http://%s/wd/hub" % hub_url)
             username = os.environ["SAUCE_USERNAME"]
             access_key = os.environ["SAUCE_ACCESS_KEY"]
-            cls.driver = webdriver.Remote(
-                command_executor='https://{}:{}@ondemand.eu-central-1.saucelabs.com:443/wd/hub'.format(username,
-                                                                                                       access_key),
-                desired_capabilities=desired_cap)
+
+            # cmd_exec = 'https://{}:{}@ondemand.eu-central-1.saucelabs.com:443/wd/hub'.format(username, access_key)
+
+            hub_url = "%s:%s@localhost:4445" % (username, access_key)
+            cmd_exec = "http://%s/wd/hub" % hub_url
+
+            cls.driver = webdriver.Remote(command_executor=cmd_exec, desired_capabilities=desired_cap)
 
     @classmethod
     def teardown_class(cls):
@@ -53,13 +55,12 @@ class TestBrowserBehaviour:
             cls.driver.close()
         else:
             cls.driver.quit()
-            #cls.driver.close()
 
     @classmethod
     def _launch_local_server(cls):
         """ Initialise a local instance of the application.
         """
-        print("Launching server...")
+        print("Launching local server...")
         cls.server_process = subprocess.Popen("python ../app.py", stdin=subprocess.PIPE, stdout=None, stderr=None,
                                               close_fds=True, shell=True)
         print("Server running...")
@@ -68,7 +69,7 @@ class TestBrowserBehaviour:
     def _stop_local_server(cls):
         """ Shut down the application instance.
         """
-        print("Stopping server...")
+        print("Stopping local server...")
         cls.server_process.send_signal(signal.SIGINT)
 
     def _load_buzz_page(self):
