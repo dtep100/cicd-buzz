@@ -26,11 +26,11 @@ class TestBrowserBehaviour:
             # The command_executor tells the test to run on Sauce, while the desired_capabilities
             # parameter tells us which browsers and OS to spin up.
             desired_cap = {
-                'platform': "Mac OS X 10.13",
-                'browserName': "safari",
-                'version': "11.1",
+                #'platform': "Mac OS X 10.13",
+                #'browserName': "safari",
+                #'version': "11.1",
                 'build': os.environ["TRAVIS_BUILD_NUMBER"],
-                'name': "TestBrowserBehaviour tests",
+                #'name': "TestBrowserBehaviour tests",
                 'tags': [os.environ["TRAVIS_PYTHON_VERSION"], "CI"],
                 'tunnel-identifier': os.environ["TRAVIS_JOB_NUMBER"],
             }
