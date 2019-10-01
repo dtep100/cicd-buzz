@@ -1,3 +1,4 @@
+urllib3
 selenium
 pytest==3.0.6
 Flask==0.12.3
