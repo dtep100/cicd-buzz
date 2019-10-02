@@ -9,7 +9,7 @@ python:
   - "2.7"
 
 before_script:
-  - sh ./.travis/sauce_connect.sh #open Sauce connector
+  - bash ./.travis/sauce_connect.sh #open Sauce connector
   - python app.py & #launch the server in the background to allow selenium testing
   - sleep 3 # give application some time to start
 
