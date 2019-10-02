@@ -17,7 +17,9 @@ class TestBrowserBehaviour:
         """ setup any state specific to the execution of the given class (which
         usually contains tests).
         """
-        cls._use_remote_server = True  # os.environ["CI"]
+        cls._use_remote_server = False
+        if os.environ["CI"] == "True":
+            cls._use_remote_server = True
 
         if not cls._use_remote_server:
             cls._launch_local_server()
@@ -32,7 +34,6 @@ class TestBrowserBehaviour:
                 'build': os.environ["TRAVIS_BUILD_NUMBER"],
                 'name': "TestBrowserBehaviour tests",
                 'tags': [os.environ["TRAVIS_PYTHON_VERSION"], "CI"],
-                #'tunnel-identifier': os.environ["TRAVIS_JOB_NUMBER"],
             }
 
             username = os.environ["SAUCE_USERNAME"]
@@ -74,7 +75,8 @@ class TestBrowserBehaviour:
         cls.server_process.send_signal(signal.SIGINT)
 
     def _load_buzz_page(self):
-        self.driver.get("http://localhost:5000")
+        pass
+        #self.driver.get("http://localhost:5000")
         # if self._use_remote_server:
         #     self.driver.get("https://serene-refuge-85633.herokuapp.com")
         # else:
@@ -91,5 +93,5 @@ class TestBrowserBehaviour:
         self._load_buzz_page()
         second_text = self.driver.find_element_by_tag_name("body").text
         print("\"" + second_text + "\"")
-        assert first_text is not second_text
+        assert first_text != second_text
 
