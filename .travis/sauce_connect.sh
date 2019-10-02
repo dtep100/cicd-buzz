@@ -14,7 +14,7 @@ VERSION_STRING="sc-4.5.4"
 echo "$OSTYPE"
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
         # ...
-        OS_STRING="linux64"
+        OS_STRING="linux" # "linux32"
         FILE_EXT="tar.gz"
         UNZIP_CMD="tar -xzvf"
 else
