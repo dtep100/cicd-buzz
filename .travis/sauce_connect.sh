@@ -1,15 +1,5 @@
 #!/bin/bash
 
-# Setup and start Sauce Connect for your TravisCI build
-# This script requires your .travis.yml to include the following two private env variables:
-# SAUCE_USERNAME
-# SAUCE_ACCESS_KEY
-# Follow the steps at https://saucelabs.com/opensource/travis to set that up.
-#
-# Curl and run this script as part of your .travis.yml before_script section:
-# before_script:
-#   - curl https://gist.github.com/santiycr/5139565/raw/sauce_connect_setup.sh | bash
-
 VERSION_STRING="sc-4.5.4"
 echo "$OSTYPE"
 if [[ "$OSTYPE" == "linux-gnu" ]]; then

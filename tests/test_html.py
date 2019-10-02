@@ -5,11 +5,10 @@ import subprocess
 import signal
 import urllib3
 import os
+import time
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
-
-# Local tests needing a web browser that should not run on the pipeline
 class TestBrowserBehaviour:
 
     @classmethod
@@ -18,12 +17,12 @@ class TestBrowserBehaviour:
         usually contains tests).
         """
         print (os.environ["CI"])
-        cls._use_remote_server = False
+        cls._use_remote_driver = False
         if os.environ["CI"] == "true":
-            cls._use_remote_server = True
+            cls._use_remote_driver = True
 
-        if not cls._use_remote_server:
-            cls._launch_local_server()
+        cls._launch_local_server()
+        if not cls._use_remote_driver:
             cls.driver = webdriver.Safari()
         else:
             # The command_executor tells the test to run on Sauce, while the desired_capabilities
@@ -35,16 +34,14 @@ class TestBrowserBehaviour:
                 'build': os.environ["TRAVIS_BUILD_NUMBER"],
                 'name': "TestBrowserBehaviour tests",
                 'tags': [os.environ["TRAVIS_PYTHON_VERSION"], "CI"],
+                'tunnel-identifier': os.environ["TRAVIS_JOB_NUMBER"],
             }
 
             username = os.environ["SAUCE_USERNAME"]
             access_key = os.environ["SAUCE_ACCESS_KEY"]
 
-            if False:
-                cmd_exec = 'https://{}:{}@ondemand.eu-central-1.saucelabs.com:443/wd/hub'.format(username, access_key)
-            else:
-                hub_url = "%s:%s@localhost:4445" % (username, access_key)
-                cmd_exec = "http://%s/wd/hub" % hub_url
+            hub_url = "%s:%s@localhost:4445" % (username, access_key)
+            cmd_exec = "http://%s/wd/hub" % hub_url
 
             cls.driver = webdriver.Remote(command_executor=cmd_exec, desired_capabilities=desired_cap)
 
@@ -53,8 +50,8 @@ class TestBrowserBehaviour:
         """ teardown any state that was previously setup with a call to
         setup_class.
         """
-        if not cls._use_remote_server:
-            cls._stop_local_server()
+        cls._stop_local_server()
+        if not cls._use_remote_driver:
             cls.driver.close()
         else:
             cls.driver.quit()
@@ -66,6 +63,7 @@ class TestBrowserBehaviour:
         print("Launching local server...")
         cls.server_process = subprocess.Popen("python ../app.py", stdin=subprocess.PIPE, stdout=None, stderr=None,
                                               close_fds=True, shell=True)
+        time.sleep(1) # Allow the server to start up
         print("Server running...")
 
     @classmethod
@@ -76,10 +74,7 @@ class TestBrowserBehaviour:
         cls.server_process.send_signal(signal.SIGINT)
 
     def _load_buzz_page(self):
-        if False:  # self._use_remote_server:
-            self.driver.get("https://serene-refuge-85633.herokuapp.com")
-        else:
-            self.driver.get("http://localhost:5000")
+        self.driver.get("http://localhost:5000")
 
     def test_page_loads_without_error(self):
         self._load_buzz_page()

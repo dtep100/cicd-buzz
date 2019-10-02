@@ -10,8 +10,6 @@ python:
 
 before_script:
   - bash ./.travis/sauce_connect.sh #open Sauce connector
-  - python app.py & #launch the server in the background to allow selenium testing
-  - sleep 3 # give application some time to start
 
 script:
   - python -m pytest -v
