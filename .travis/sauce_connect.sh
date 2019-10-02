@@ -41,6 +41,7 @@ cd $VERSION_STRING-$OS_STRING
 pwd
 cd bin
 pwd
+ls
 ./sc -u $SAUCE_USERNAME -k $SAUCE_ACCESS_KEY -x https://eu-central-1.saucelabs.com/rest/v1 --readyfile $READY_FILE --tunnel-identifier $TRAVIS_JOB_NUMBER
 
 # Wait for Connect to be ready before exiting
