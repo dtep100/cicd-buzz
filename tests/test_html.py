@@ -43,7 +43,7 @@ class TestBrowserBehaviour:
             if False:
                 cmd_exec = 'https://{}:{}@ondemand.eu-central-1.saucelabs.com:443/wd/hub'.format(username, access_key)
             else:
-                hub_url = "%s:%s@localhost:5000" % (username, access_key)
+                hub_url = "%s:%s@localhost:4445" % (username, access_key)
                 cmd_exec = "http://%s/wd/hub" % hub_url
 
             cls.driver = webdriver.Remote(command_executor=cmd_exec, desired_capabilities=desired_cap)
