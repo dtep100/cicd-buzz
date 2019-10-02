@@ -5,7 +5,6 @@ import subprocess
 import signal
 import urllib3
 import os
-import time
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
@@ -21,8 +20,8 @@ class TestBrowserBehaviour:
         if os.environ["CI"] == "true":
             cls._use_remote_driver = True
 
-        cls._launch_local_server()
         if not cls._use_remote_driver:
+            cls._launch_local_server()
             cls.driver = webdriver.Safari()
         else:
             # The command_executor tells the test to run on Sauce, while the desired_capabilities
@@ -50,8 +49,9 @@ class TestBrowserBehaviour:
         """ teardown any state that was previously setup with a call to
         setup_class.
         """
-        cls._stop_local_server()
+
         if not cls._use_remote_driver:
+            cls._stop_local_server()
             cls.driver.close()
         else:
             cls.driver.quit()
@@ -63,7 +63,6 @@ class TestBrowserBehaviour:
         print("Launching local server...")
         cls.server_process = subprocess.Popen("python ../app.py", stdin=subprocess.PIPE, stdout=None, stderr=None,
                                               close_fds=True, shell=True)
-        time.sleep(1) # Allow the server to start up
         print("Server running...")
 
     @classmethod
