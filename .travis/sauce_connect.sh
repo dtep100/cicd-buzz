@@ -37,7 +37,11 @@ curl $CONNECT_URL > $CONNECT_DOWNLOAD
 $UNZIP_CMD $CONNECT_DOWNLOAD
 #rm $CONNECT_DOWNLOAD
 pwd
-$VERSION_STRING-$OS_STRING/bin/sc -u $SAUCE_USERNAME -k $SAUCE_ACCESS_KEY -x https://eu-central-1.saucelabs.com/rest/v1 --readyfile $READY_FILE --tunnel-identifier $TRAVIS_JOB_NUMBER
+cd $VERSION_STRING-$OS_STRING
+pwd
+cd bin
+pwd
+./sc -u $SAUCE_USERNAME -k $SAUCE_ACCESS_KEY -x https://eu-central-1.saucelabs.com/rest/v1 --readyfile $READY_FILE --tunnel-identifier $TRAVIS_JOB_NUMBER
 
 # Wait for Connect to be ready before exiting
 while [ ! -f $READY_FILE ]; do
