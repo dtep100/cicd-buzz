@@ -87,9 +87,9 @@ class TestBrowserBehaviour:
     def test_page_text_changes_on_reload(self):
         self._load_buzz_page()
         first_text = self.driver.find_element_by_tag_name("body").text
-        #print(first_text)
+        print("\"" + first_text + "\"")
         self._load_buzz_page()
         second_text = self.driver.find_element_by_tag_name("body").text
-        #print(second_text)
+        print("\"" + second_text + "\"")
         assert first_text is not second_text
 
