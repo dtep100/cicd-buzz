@@ -17,8 +17,9 @@ class TestBrowserBehaviour:
         """ setup any state specific to the execution of the given class (which
         usually contains tests).
         """
+        print (os.environ["CI"])
         cls._use_remote_server = False
-        if os.environ["CI"] == "True":
+        if os.environ["CI"] == "true":
             cls._use_remote_server = True
 
         if not cls._use_remote_server:
@@ -75,12 +76,10 @@ class TestBrowserBehaviour:
         cls.server_process.send_signal(signal.SIGINT)
 
     def _load_buzz_page(self):
-        pass
-        #self.driver.get("http://localhost:5000")
-        # if self._use_remote_server:
-        #     self.driver.get("https://serene-refuge-85633.herokuapp.com")
-        # else:
-        #     self.driver.get("http://localhost:5000")
+        if self._use_remote_server:
+            self.driver.get("https://serene-refuge-85633.herokuapp.com")
+        else:
+            self.driver.get("http://localhost:5000")
 
     def test_page_loads_without_error(self):
         self._load_buzz_page()
