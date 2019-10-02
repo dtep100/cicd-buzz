@@ -38,7 +38,7 @@ class TestBrowserBehaviour:
             username = os.environ["SAUCE_USERNAME"]
             access_key = os.environ["SAUCE_ACCESS_KEY"]
 
-            if True:
+            if False:
                 cmd_exec = 'https://{}:{}@ondemand.eu-central-1.saucelabs.com:443/wd/hub'.format(username, access_key)
             else:
                 hub_url = "%s:%s@localhost:4445" % (username, access_key)
@@ -74,10 +74,11 @@ class TestBrowserBehaviour:
         cls.server_process.send_signal(signal.SIGINT)
 
     def _load_buzz_page(self):
-        if self._use_remote_server:
-            self.driver.get("https://serene-refuge-85633.herokuapp.com")
-        else:
-            self.driver.get("http://localhost:5000")
+        self.driver.get("http://localhost:5000")
+        # if self._use_remote_server:
+        #     self.driver.get("https://serene-refuge-85633.herokuapp.com")
+        # else:
+        #     self.driver.get("http://localhost:5000")
 
     def test_page_loads_without_error(self):
         self._load_buzz_page()
