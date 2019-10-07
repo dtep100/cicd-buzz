@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e800bf4a-e7b6-429d-8207-37e13e872704" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/hello/BuzzController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hello/HelloControllerIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hello/HelloControllerIT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hello/HelloControllerTest1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hello/HelloControllerTest1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -50,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/hello/BuzzController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+            <state relative-caret-position="210">
+              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -95,8 +92,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/hello/HelloControllerIT.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="31" column="64" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
+            <state>
+              <caret selection-end-line="40" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/hello/BuzzControllerST.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="33" column="8" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/hello/GeneratorTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="807">
+              <caret line="65" column="46" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -132,11 +150,12 @@
         <option value="$PROJECT_DIR$/settings.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/hello/generator.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/Generator.java" />
-        <option value="$PROJECT_DIR$/src/test/java/hello/GeneratorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/HelloController.java" />
         <option value="$PROJECT_DIR$/src/test/java/hello/HelloControllerIT.java" />
         <option value="$PROJECT_DIR$/src/test/java/hello/HelloControllerTest1.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/BuzzController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/hello/GeneratorTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/hello/BuzzControllerST.java" />
       </list>
     </option>
   </component>
@@ -254,7 +273,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager" selected="Gradle.Tests in 'TEST2.test'">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -388,8 +407,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Application" />
         <item itemvalue="Gradle.Tests in 'TEST2.test'" />
+        <item itemvalue="Application.Application" />
         <item itemvalue="Gradle.GeneratorTest" />
         <item itemvalue="Gradle.Tests in 'hello'" />
         <item itemvalue="Gradle.HelloControllerTest" />
@@ -410,12 +429,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GeneratorTest - 2019.10.07 at 15h 53m 43s.xml">
-      <configuration name="GeneratorTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="GeneratorTest - 2019.10.07 at 15h 53m 45s.xml">
-      <configuration name="GeneratorTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
     <history-entry file="GeneratorTest - 2019.10.07 at 15h 58m 59s.xml">
       <configuration name="GeneratorTest" configurationId="GradleRunConfiguration" />
     </history-entry>
@@ -438,6 +451,12 @@
       <configuration name="Tests in 'TEST2.test'" configurationId="GradleRunConfiguration" />
     </history-entry>
     <history-entry file="Tests_in_'TEST2_test' - 2019.10.07 at 16h 13m 29s.xml">
+      <configuration name="Tests in 'TEST2.test'" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="Tests_in_'TEST2_test' - 2019.10.07 at 16h 29m 06s.xml">
+      <configuration name="Tests in 'TEST2.test'" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="Tests_in_'TEST2_test' - 2019.10.07 at 16h 31m 38s.xml">
       <configuration name="Tests in 'TEST2.test'" configurationId="GradleRunConfiguration" />
     </history-entry>
   </component>
@@ -506,18 +525,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/hello/GeneratorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#806#814#0" expanded="true" />
-            <element signature="e#1283#1291#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/Generator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="825">
@@ -544,13 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/hello/HelloControllerIT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="31" column="64" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/hello/HelloControllerTest1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -570,11 +570,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/BuzzController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        <state relative-caret-position="210">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/hello/HelloControllerIT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="40" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/hello/GeneratorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="807">
+          <caret line="65" column="46" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/hello/BuzzControllerST.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="33" column="8" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
         </state>
       </provider>
     </entry>
