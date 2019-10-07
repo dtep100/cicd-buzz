@@ -8,7 +8,8 @@ public class HelloController {
 
     @RequestMapping("/")
     public String index() {
-        String response = "<html><body><h1>\n" + "Greetings from Spring Boot!\n" + "</h1></body></html>";
+        String response = "Greetings from Spring Boot!";
+        //String response = "<html><body><h1>\n" + "Greetings from Spring Boot!\n" + "</h1></body></html>";
         return response;
     }
 
