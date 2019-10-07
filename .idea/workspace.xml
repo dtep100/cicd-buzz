@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e800bf4a-e7b6-429d-8207-37e13e872704" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/hello/Generator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/hello/GeneratorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/hello/GeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hello/GeneratorTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -41,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/hello/Generator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="47" column="40" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
+            <state relative-caret-position="710">
+              <caret line="55" column="9" lean-forward="true" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#625#633#0" expanded="true" />
@@ -59,10 +57,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/hello/GeneratorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+            <state relative-caret-position="370">
+              <caret line="59" column="19" lean-forward="true" selection-start-line="59" selection-end-line="60" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#806#814#0" expanded="true" />
+                <element signature="e#1283#1291#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -390,21 +390,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GeneratorTest - 2019.10.07 at 15h 36m 44s.xml">
-      <configuration name="GeneratorTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="GeneratorTest - 2019.10.07 at 15h 36m 45s.xml">
-      <configuration name="GeneratorTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="GeneratorTest - 2019.10.07 at 15h 50m 39s.xml">
-      <configuration name="GeneratorTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="GeneratorTest - 2019.10.07 at 15h 51m 00s.xml">
-      <configuration name="GeneratorTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="GeneratorTest - 2019.10.07 at 15h 51m 27s.xml">
-      <configuration name="GeneratorTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
     <history-entry file="GeneratorTest - 2019.10.07 at 15h 51m 40s.xml">
       <configuration name="GeneratorTest" configurationId="GradleRunConfiguration" />
     </history-entry>
@@ -418,6 +403,21 @@
       <configuration name="GeneratorTest" configurationId="GradleRunConfiguration" />
     </history-entry>
     <history-entry file="GeneratorTest - 2019.10.07 at 15h 53m 45s.xml">
+      <configuration name="GeneratorTest" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="GeneratorTest - 2019.10.07 at 15h 58m 59s.xml">
+      <configuration name="GeneratorTest" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="GeneratorTest - 2019.10.07 at 16h 00m 46s.xml">
+      <configuration name="GeneratorTest" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="GeneratorTest - 2019.10.07 at 16h 01m 39s.xml">
+      <configuration name="GeneratorTest" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="GeneratorTest - 2019.10.07 at 16h 06m 33s.xml">
+      <configuration name="GeneratorTest" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="GeneratorTest - 2019.10.07 at 16h 07m 38s.xml">
       <configuration name="GeneratorTest" configurationId="GradleRunConfiguration" />
     </history-entry>
   </component>
@@ -522,8 +522,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/Generator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="47" column="40" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
+        <state relative-caret-position="710">
+          <caret line="55" column="9" lean-forward="true" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#625#633#0" expanded="true" />
@@ -538,10 +538,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/hello/GeneratorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+        <state relative-caret-position="370">
+          <caret line="59" column="19" lean-forward="true" selection-start-line="59" selection-end-line="60" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#806#814#0" expanded="true" />
+            <element signature="e#1283#1291#0" expanded="true" />
           </folding>
         </state>
       </provider>

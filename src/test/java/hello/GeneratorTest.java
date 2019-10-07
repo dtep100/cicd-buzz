@@ -12,17 +12,6 @@ import static org.junit.Assert.*;
 
 public class GeneratorTest {
 
-    ArrayList<String> sampleList;
-
-    @Before
-    public void setUp() throws Exception {
-        sampleList = new ArrayList<String>(Arrays.asList("foo", "bar", "foobar"));
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
-
     private boolean findInList(ArrayList<String> searchList, String searchItem)
     {
         boolean foundEntry = false;
@@ -38,6 +27,8 @@ public class GeneratorTest {
     public void test_sample_single_word(){
 
         /* Precondition */
+        ArrayList<String> sampleList = new ArrayList<String>(Arrays.asList("foo", "bar", "foobar"));
+
 
         /* Action */
         ArrayList<String> responseList = Generator.sample(sampleList, 1);
@@ -45,13 +36,8 @@ public class GeneratorTest {
         /* Assertion */
         assertNotNull(responseList);
         assertEquals(1, responseList.size());
-        boolean foundEntry = false;
-        for(String sample: sampleList){
-            if(responseList.get(0).equals(sample)){
-                foundEntry = true;
-            }
-        }
-        assertEquals(true, foundEntry);
+        assertTrue(findInList(sampleList, responseList.get(0)));
+        System.out.println(responseList.get(0));
 
     }
 
@@ -59,6 +45,8 @@ public class GeneratorTest {
     public void test_sample_multiple_words() throws Exception {
 
         /* Precondition */
+        ArrayList<String> sampleList = new ArrayList<String>(Arrays.asList("foo", "bar", "foobar"));
+
 
         /* Action */
         ArrayList<String> responseList = Generator.sample(sampleList, 2);
@@ -66,18 +54,11 @@ public class GeneratorTest {
         /* Assertion */
         assertNotNull(responseList);
         assertEquals(2, responseList.size());
-
-        for(String response : responseList){
-            boolean foundEntry = false;
-            for(String sample: sampleList){
-                if(response.equals(sample)){
-                    foundEntry = true;
-                }
-            }
-            assertEquals(true, foundEntry);
-        }
-
+        assertTrue(findInList(sampleList, responseList.get(0)));
+        assertTrue(findInList(sampleList, responseList.get(1)));
         assertNotEquals(responseList.get(0), responseList.get(1));
+        System.out.println(responseList.get(0) + ", " + responseList.get(1));
+
 
     }
 
@@ -91,5 +72,6 @@ public class GeneratorTest {
 
         /* Assertion */
         assertTrue(phrase.split(" ").length >= 5);
+        System.out.println(phrase);
     }
 }
