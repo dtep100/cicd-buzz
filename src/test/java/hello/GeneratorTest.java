@@ -24,7 +24,7 @@ public class GeneratorTest {
     }
 
     @Test
-    public void test_sample_single_word(){
+    public void testSampleSingleWord(){
 
         /* Precondition */
         ArrayList<String> sampleList = new ArrayList<String>(Arrays.asList("foo", "bar", "foobar"));
@@ -42,7 +42,7 @@ public class GeneratorTest {
     }
 
     @Test
-    public void test_sample_multiple_words() throws Exception {
+    public void testSampleMultipleWords() throws Exception {
 
         /* Precondition */
         ArrayList<String> sampleList = new ArrayList<String>(Arrays.asList("foo", "bar", "foobar"));
@@ -63,7 +63,7 @@ public class GeneratorTest {
     }
 
     @Test
-    public void test_generate_buzz_of_at_least_five_words() throws Exception {
+    public void testGenerateBuzzOfAtLeastFiveWords() throws Exception {
 
         /* Precondition */
 
