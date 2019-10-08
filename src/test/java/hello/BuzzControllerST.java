@@ -3,6 +3,10 @@ package hello;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
+import org.junit.After;
+import org.openqa.selenium.By;
+import org.openqa.selenium.safari.SafariDriver;
+
 import java.net.URL;
 
 import org.junit.Before;
@@ -23,33 +27,47 @@ public class BuzzControllerST {
     @LocalServerPort
     private int port;
 
+    private SafariDriver driver;
+
+    @Before
+    public void setup(){
+        driver = new SafariDriver();
+    }
+
+    @After
+    public void teardown(){
+        driver.close();
+    }
+
+    public void helperLoadPage()
+    {
+        driver.get("http://localhost:" + port);
+    }
 
     @Test
-    public void testPageLoadsWithoutError() throws Exception {
-        assertTrue("Unimplemented test",false);
+    public void testPageTitle() throws Exception {
+        /* Precondition */
+
+        /* Action */
+        helperLoadPage();
+        String pageTitle = driver.getTitle();
+
+        /* Assertion */
+        assertEquals("CI/CD buzz generator", pageTitle);
     }
 
     @Test
     public void testPageTextChangesOnReload() throws Exception {
-        assertTrue("Unimplemented test",false);
+
+        /* Precondition */
+
+        /* Action */
+        helperLoadPage();
+        String firstBody = driver.findElementByTagName("body").getText();
+        helperLoadPage();
+        String secondBody = driver.findElementByTagName("body").getText();
+
+        /* Assertion */
+        assertNotEquals(firstBody, secondBody);
     }
-
 }
-
-
-    //def _load_buzz_page(self):
-    //    self.driver.get("http://localhost:5000")
-    //
-    //    def test_page_loads_without_error(self):
-    //    self._load_buzz_page()
-    //    assert "buzz" in self.driver.title
-    //
-    //    def test_page_text_changes_on_reload(self):
-    //    self._load_buzz_page()
-    //    first_text = self.driver.find_element_by_tag_name("body").text
-    //    print("\"" + first_text + "\"")
-    //    self._load_buzz_page()
-    //    second_text = self.driver.find_element_by_tag_name("body").text
-    //    print("\"" + second_text + "\"")
-    //    assert first_text != second_text
-

@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
-public class GeneratorTest {
+public class GeneratorUT {
 
     private boolean findInList(ArrayList<String> searchList, String searchItem)
     {
