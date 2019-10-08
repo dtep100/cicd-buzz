@@ -5,8 +5,12 @@ import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.remote.*;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.io.IOException;
 import java.net.URL;
 
 import org.junit.Before;
@@ -27,11 +31,44 @@ public class BuzzControllerST {
     @LocalServerPort
     private int port;
 
-    private SafariDriver driver;
+    private RemoteWebDriver driver;
 
     @Before
-    public void setup(){
-        driver = new SafariDriver();
+    public void setup() throws Exception {
+
+        /* Check if we are using a remote driver or a local driver */
+        String remoteTesting = System.getProperty("CI","False").toUpperCase();
+
+        if(!remoteTesting.equals("TRUE")) {
+            driver = new SafariDriver();
+        } else {
+            URL executorUrl;
+            {
+                String userName = System.getProperty("SAUCE_USERNAME","userName");
+                String accessKey = System.getProperty("SAUCE_ACCESS_KEY","accessKey");
+                String hubUrl = String.format("http://%s:%s@localhost:4445/wd/hub", userName, accessKey);
+                executorUrl = new URL(hubUrl);
+            }
+
+            DesiredCapabilities capabilities;
+            {
+                capabilities = DesiredCapabilities.safari();
+
+                capabilities.setCapability("platform", "Mac OS X 10.13");
+                capabilities.setCapability("browserName", "Safari");
+                capabilities.setCapability("version", "11.1");
+
+                String buildNumber = System.getProperty("TRAVIS_BUILD_NUMBER","buildnumber");
+                capabilities.setCapability("build", buildNumber);
+
+                capabilities.setCapability("name", this.getClass().getSimpleName());
+
+                String tunnelId = System.getProperty("TRAVIS_JOB_NUMBER","tunnel");
+                capabilities.setCapability("tunnel-identifier", tunnelId);
+            }
+
+            driver = new RemoteWebDriver(executorUrl, capabilities);
+        }
     }
 
     @After
