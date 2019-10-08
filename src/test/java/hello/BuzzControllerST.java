@@ -86,9 +86,7 @@ public class BuzzControllerST {
     @After
     public void teardown(){
         driver.close();
-        if(true == remoteTesting) {
-            driver.quit();
-        }
+        driver.quit();
     }
 
     public void helperLoadPage()
