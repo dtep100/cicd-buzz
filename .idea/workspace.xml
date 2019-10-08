@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e800bf4a-e7b6-429d-8207-37e13e872704" name="Default Changelist" comment="Fi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis/sauce_connect.sh" beforeDir="false" afterPath="$PROJECT_DIR$/.travis/sauce_connect.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/hello/BuzzControllerST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hello/BuzzControllerST.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
