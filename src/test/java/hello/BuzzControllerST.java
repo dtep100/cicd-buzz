@@ -27,22 +27,22 @@ public class BuzzControllerST {
     @LocalServerPort
     private int port;
 
-    private SafariDriver driver;
-
-    @Before
-    public void setup(){
-        driver = new SafariDriver();
-    }
-
-    @After
-    public void teardown(){
-        driver.close();
-    }
-
-    public void helperLoadPage()
-    {
-        driver.get("http://localhost:" + port);
-    }
+//    private SafariDriver driver;
+//
+//    @Before
+//    public void setup(){
+//        driver = new SafariDriver();
+//    }
+//
+//    @After
+//    public void teardown(){
+//        driver.close();
+//    }
+//
+//    public void helperLoadPage()
+//    {
+//        driver.get("http://localhost:" + port);
+//    }
 
     @Test
     public void testPageTitle() throws Exception {
