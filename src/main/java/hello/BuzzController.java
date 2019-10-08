@@ -1,15 +1,18 @@
 package hello;
 
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-@RestController
+
+@Controller
 public class BuzzController {
 
-    @RequestMapping("/")
-    public String index() {
-        String response = buildBuzzPage(Generator.generateBuzz());
-        return response;
+    @GetMapping("/")
+    public String index(Model model) {
+        model.addAttribute("buzz", Generator.generateBuzz());
+        return "index";
     }
 
     public String buildBuzzPage(String bodyText){
