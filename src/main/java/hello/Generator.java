@@ -6,29 +6,29 @@ import java.util.Random;
 
 public class Generator {
 
-    private static ArrayList<String> buzzList = new ArrayList<>(Arrays.asList("continuous testing",
-                                                                                    "continuous integration",
-                                                                                    "continuous deployment",
-                                                                                    "continuous improvement",
-                                                                                    "devops"));
+    private static ArrayList<String> buzzList = new ArrayList<>(Arrays.asList(  "continuous testing",
+                                                                                "continuous integration",
+                                                                                "continuous deployment",
+                                                                                "continuous improvement",
+                                                                                "devops"));
 
-    private static ArrayList<String> adjectiveList = new ArrayList<>(Arrays.asList("complete",
-                                                                                         "modern",
-                                                                                         "self-service",
-                                                                                         "integrated",
-                                                                                         "end-to-end"));
+    private static ArrayList<String> adjectiveList = new ArrayList<>(Arrays.asList(  "complete",
+                                                                                     "modern",
+                                                                                     "self-service",
+                                                                                     "integrated",
+                                                                                     "end-to-end"));
 
-    private static ArrayList<String> adverbList = new ArrayList<>(Arrays.asList("remarkably",
-                                                                                      "enormously",
-                                                                                      "substantially",
-                                                                                      "significantly",
-                                                                                      "seriously"));
+    private static ArrayList<String> adverbList = new ArrayList<>(Arrays.asList(  "remarkably",
+                                                                                  "enormously",
+                                                                                  "substantially",
+                                                                                  "significantly",
+                                                                                  "seriously"));
 
-    private static ArrayList<String> verbList = new ArrayList<>(Arrays.asList("accelerates",
-                                                                                    "improves",
-                                                                                    "enhances",
-                                                                                    "revamps",
-                                                                                    "boosts"));
+    private static ArrayList<String> verbList = new ArrayList<>(Arrays.asList(  "accelerates",
+                                                                                "improves",
+                                                                                "enhances",
+                                                                                "revamps",
+                                                                                "boosts"));
 
     private static ArrayList<String> cloneList(ArrayList<String> sourceList)
     {
