@@ -32,26 +32,14 @@ public class BuzzControllerST {
     private int port;
 
     private RemoteWebDriver driver;
-    private boolean remoteTesting = false;
 
     @Before
     public void setup() throws Exception {
 
-        {
-            remoteTesting = false;
-            /* Check if we are using a remote driver or a local driver */
-            String envVar = System.getenv("CI");
+        /* Check if we are using a remote driver or a local driver */
+        String remoteTesting = System.getenv("CI").toUpperCase();
 
-            /* Check if environment variable was actually set */
-            if (null != envVar){
-                if(envVar.toUpperCase() == "TRUE"){
-                    remoteTesting = true;
-                }
-            }
-        }
-
-        if(false == remoteTesting)
-        {
+        if(!remoteTesting.equals("TRUE")) {
             driver = new SafariDriver();
         } else {
             URL executorUrl;
