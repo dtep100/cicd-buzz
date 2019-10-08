@@ -25,7 +25,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT) /* Remote Web-driver does not like random ports */
 public class BuzzControllerST {
 
     @LocalServerPort
@@ -37,15 +37,15 @@ public class BuzzControllerST {
     public void setup() throws Exception {
 
         /* Check if we are using a remote driver or a local driver */
-        String remoteTesting = System.getProperty("CI","False").toUpperCase();
+        String remoteTesting = System.getenv("CI").toUpperCase();
 
         if(!remoteTesting.equals("TRUE")) {
             driver = new SafariDriver();
         } else {
             URL executorUrl;
             {
-                String userName = System.getProperty("SAUCE_USERNAME","userName");
-                String accessKey = System.getProperty("SAUCE_ACCESS_KEY","accessKey");
+                String userName = System.getenv("SAUCE_USERNAME");
+                String accessKey = System.getenv("SAUCE_ACCESS_KEY");
                 String hubUrl = String.format("http://%s:%s@localhost:4445/wd/hub", userName, accessKey);
                 executorUrl = new URL(hubUrl);
             }
@@ -58,12 +58,12 @@ public class BuzzControllerST {
                 capabilities.setCapability("browserName", "Safari");
                 capabilities.setCapability("version", "11.1");
 
-                String buildNumber = System.getProperty("TRAVIS_BUILD_NUMBER","buildnumber");
+                String buildNumber = System.getenv("TRAVIS_BUILD_NUMBER");
                 capabilities.setCapability("build", buildNumber);
 
                 capabilities.setCapability("name", this.getClass().getSimpleName());
 
-                String tunnelId = System.getProperty("TRAVIS_JOB_NUMBER","tunnel");
+                String tunnelId = System.getenv("TRAVIS_JOB_NUMBER");
                 capabilities.setCapability("tunnel-identifier", tunnelId);
             }
 
@@ -74,6 +74,7 @@ public class BuzzControllerST {
     @After
     public void teardown(){
         driver.close();
+        driver.quit();
     }
 
     public void helperLoadPage()
