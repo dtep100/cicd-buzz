@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e800bf4a-e7b6-429d-8207-37e13e872704" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/cicd-buzz.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +81,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager" selected="Gradle.Tests in 'TEST2.test'">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -237,39 +234,22 @@
       <option name="presentableId" value="Default" />
       <updated>1570449142765</updated>
     </task>
+    <task id="LOCAL-00001" summary="Temporarily disabling selenium testing">
+      <created>1570532085362</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1570532085363</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Temporarily disabling selenium testing">
+      <created>1570532313467</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1570532313467</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="BuzzControllerST_testPageTextChangesOnReload - 2019.10.08 at 10h 30m 58s.xml">
-      <configuration name="BuzzControllerST.testPageTextChangesOnReload" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="Tests_in_'TEST2_test' - 2019.10.08 at 10h 32m 42s.xml">
-      <configuration name="Tests in 'TEST2.test'" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="BuzzControllerST - 2019.10.08 at 11h 04m 00s.xml">
-      <configuration name="BuzzControllerST" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="Tests_in_'TEST2_test' - 2019.10.08 at 11h 05m 22s.xml">
-      <configuration name="Tests in 'TEST2.test'" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="BuzzControllerST - 2019.10.08 at 11h 09m 01s.xml">
-      <configuration name="BuzzControllerST" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="BuzzControllerST_testPageTitle - 2019.10.08 at 11h 09m 39s.xml">
-      <configuration name="BuzzControllerST.testPageTitle" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="BuzzControllerST - 2019.10.08 at 11h 13m 27s.xml">
-      <configuration name="BuzzControllerST" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="Tests_in_'TEST2_test' - 2019.10.08 at 11h 22m 50s.xml">
-      <configuration name="Tests in 'TEST2.test'" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="Tests_in_'TEST2_test' - 2019.10.08 at 11h 28m 55s.xml">
-      <configuration name="Tests in 'TEST2.test'" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="Tests_in_'TEST2_test' - 2019.10.08 at 11h 32m 16s.xml">
-      <configuration name="Tests in 'TEST2.test'" configurationId="GradleRunConfiguration" />
-    </history-entry>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -281,6 +261,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Temporarily disabling selenium testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Temporarily disabling selenium testing" />
   </component>
   <component name="masterDetails">
     <states>
