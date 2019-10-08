@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e800bf4a-e7b6-429d-8207-37e13e872704" name="Default Changelist" comment="Fi">
+    <list default="true" id="e800bf4a-e7b6-429d-8207-37e13e872704" name="Default Changelist" comment="refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hello/BuzzControllerST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hello/BuzzControllerST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/Generator.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +43,10 @@
   </component>
   <component name="ProjectId" id="1RuzGMZ4fpOUy9bzK2C0Zm5LxPt" />
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
@@ -74,7 +78,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'CICDBUZZ.test'">
+  <component name="RunManager" selected="Gradle.GeneratorUT">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -100,6 +104,26 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="GeneratorUT" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;hello.GeneratorUT&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="Tests in 'CICDBUZZ.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -154,9 +178,11 @@
     <list>
       <item itemvalue="Application.Application" />
       <item itemvalue="Gradle.Tests in 'CICDBUZZ.test'" />
+      <item itemvalue="Gradle.GeneratorUT" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.GeneratorUT" />
         <item itemvalue="Gradle.Tests in 'CICDBUZZ.test'" />
         <item itemvalue="Application.Application" />
       </list>
@@ -187,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570532313467</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Correcting webdriver changes">
+      <created>1570544821669</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1570544821669</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,6 +238,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Temporarily disabling selenium testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Temporarily disabling selenium testing" />
+    <MESSAGE value="Correcting webdriver changes" />
+    <MESSAGE value="refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
   </component>
 </project>

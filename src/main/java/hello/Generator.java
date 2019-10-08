@@ -6,29 +6,38 @@ import java.util.Random;
 
 public class Generator {
 
-    private static ArrayList<String> buzzList = new ArrayList<String>(Arrays.asList("continuous testing",
+    private static ArrayList<String> buzzList = new ArrayList<>(Arrays.asList("continuous testing",
                                                                                     "continuous integration",
                                                                                     "continuous deployment",
                                                                                     "continuous improvement",
                                                                                     "devops"));
 
-    private static ArrayList<String> adjectiveList = new ArrayList<String>(Arrays.asList("complete",
+    private static ArrayList<String> adjectiveList = new ArrayList<>(Arrays.asList("complete",
                                                                                          "modern",
                                                                                          "self-service",
                                                                                          "integrated",
                                                                                          "end-to-end"));
 
-    private static ArrayList<String> adverbList = new ArrayList<String>(Arrays.asList("remarkably",
+    private static ArrayList<String> adverbList = new ArrayList<>(Arrays.asList("remarkably",
                                                                                       "enormously",
                                                                                       "substantially",
                                                                                       "significantly",
                                                                                       "seriously"));
 
-    private static ArrayList<String> verbList = new ArrayList<String>(Arrays.asList("accelerates",
+    private static ArrayList<String> verbList = new ArrayList<>(Arrays.asList("accelerates",
                                                                                     "improves",
                                                                                     "enhances",
                                                                                     "revamps",
                                                                                     "boosts"));
+
+    private static ArrayList<String> cloneList(ArrayList<String> sourceList)
+    {
+        ArrayList<String> cloneList = new ArrayList<>();
+        for(String inputItem: sourceList){
+            cloneList.add(inputItem);
+        }
+        return(cloneList);
+    }
 
     private static String makeTitleCase(String phrase)
     {
@@ -47,13 +56,9 @@ public class Generator {
     }
 
     public static ArrayList<String> sample(ArrayList<String> stringList, int number) {
-        ArrayList<String> responseList = new ArrayList<String>();
-        ArrayList<String> workingList = new ArrayList<String>();
-
+        ArrayList<String> responseList = new ArrayList<>();
         /* Clone the input list into a working copy that we can mess with */
-        for(String inputItem: stringList){
-            workingList.add(inputItem);
-        }
+        ArrayList<String> workingList = cloneList(stringList);
 
         Random random = new Random();
 
@@ -79,9 +84,7 @@ public class Generator {
                         sample(verbList,1).get(0) + " " +
                         buzzTerms.get(1);
 
-        String response = makeTitleCase(phrase);
-
-        return(response);
+        return(makeTitleCase(phrase));
     }
 
 }
