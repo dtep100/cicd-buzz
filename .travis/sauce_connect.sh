@@ -14,7 +14,6 @@ else
         UNZIP_CMD="unzip"
 fi
 
-
 CONNECT_URL="https://saucelabs.com/downloads/$VERSION_STRING-$OS_STRING.$FILE_EXT"
 CONNECT_DIR="/tmp/sauce-connect-$RANDOM"
 CONNECT_DOWNLOAD="Sauce_Connect.zip"
@@ -26,13 +25,8 @@ cd $CONNECT_DIR
 curl $CONNECT_URL > $CONNECT_DOWNLOAD
 $UNZIP_CMD $CONNECT_DOWNLOAD
 rm $CONNECT_DOWNLOAD
-pwd
 cd $VERSION_STRING-$OS_STRING
-pwd
 cd bin
-pwd
-ls -l
-file sc
 ./sc -u $SAUCE_USERNAME -k $SAUCE_ACCESS_KEY -x https://eu-central-1.saucelabs.com/rest/v1 --readyfile $READY_FILE --tunnel-identifier $TRAVIS_JOB_NUMBER &
 
 # Wait for Connect to be ready before exiting
