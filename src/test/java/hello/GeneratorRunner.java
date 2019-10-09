@@ -30,13 +30,15 @@ public class GeneratorRunner extends JUnitStory {
     @Override
     public Configuration configuration() {
 
-        StoryLoader loader = null;//LoadFromURL();
+        String path = codeLocationFromClass(this.getClass()).toString();
+        path += "../../../../src/test/stories";
+
+        StoryLoader loader = null;
         try {
-            loader = new LoadFromRelativeFile(new URL("file:///Users/dtep100/cicd-buzz/src/test/stories/"));
+            loader = new LoadFromRelativeFile(new URL(path));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        //loader.loadResourceAsText("file:///Users/dtep100/cicd-buzz/src/test/stories/hello/generator_runner.story");
 
         return new MostUsefulConfiguration()
                 // where to find the stories
@@ -44,7 +46,6 @@ public class GeneratorRunner extends JUnitStory {
                 // CONSOLE and TXT reporting
                 .useStoryReporterBuilder(new StoryReporterBuilder().withDefaultFormats().withFormats(Format.CONSOLE, Format.TXT));
 
-        //        return Arrays.asList("com/ontestautomation/jbehave/demo/test_value.story");
     }
 
     // Here we specify the steps classes
@@ -54,24 +55,3 @@ public class GeneratorRunner extends JUnitStory {
         return new InstanceStepsFactory(configuration(), new GeneratorSteps());
     }
 }
-
-
-//public class EtsyDotComStories extends JUnitStories {
-//
-//    PendingStepStrategy pendingStepStrategy = new FailingUponPendingStep();
-//    CrossReference crossReference = new CrossReference().withJsonOnly().withPendingStepStrategy(pendingStepStrategy)
-//            .withOutputAfterEachStory(true).excludingStoriesWithNoExecutedScenarios(true);
-//    ContextView contextView = new LocalFrameContextView().sized(640, 120);
-//    SeleniumContext seleniumContext = new SeleniumContext();
-//    SeleniumStepMonitor stepMonitor = new SeleniumStepMonitor(contextView, seleniumContext,
-//            crossReference.getStepMonitor());
-//    Format[] formats = new Format[] { new SeleniumContextOutput(seleniumContext), CONSOLE, WEB_DRIVER_HTML };
-//    StoryReporterBuilder reporterBuilder = new StoryReporterBuilder()
-//            .withCodeLocation(codeLocationFromClass(EtsyDotComStories.class)).withFailureTrace(true)
-//            .withFailureTraceCompression(true).withDefaultFormats().withFormats(formats)
-//            .withCrossReference(crossReference);
-//
-//
-//
-//
-//}
