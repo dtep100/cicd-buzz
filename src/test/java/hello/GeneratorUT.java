@@ -27,7 +27,7 @@ public class GeneratorUT {
     public void testSampleSingleWord(){
 
         /* Precondition */
-        ArrayList<String> sampleList = new ArrayList<String>(Arrays.asList("foo", "bar", "foobar"));
+        ArrayList<String> sampleList = new ArrayList<>(Arrays.asList("foo", "bar", "foobar"));
 
 
         /* Action */
@@ -45,7 +45,7 @@ public class GeneratorUT {
     public void testSampleMultipleWords() throws Exception {
 
         /* Precondition */
-        ArrayList<String> sampleList = new ArrayList<String>(Arrays.asList("foo", "bar", "foobar"));
+        ArrayList<String> sampleList = new ArrayList<>(Arrays.asList("foo", "bar", "foobar"));
 
 
         /* Action */
