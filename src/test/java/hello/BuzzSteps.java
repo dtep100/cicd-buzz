@@ -1,29 +1,28 @@
 package hello;
 
-import org.hamcrest.Matchers;
 import org.jbehave.core.annotations.*;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
-import org.springframework.boot.web.server.LocalServerPort;
 
-import java.util.ArrayList;
+import java.net.URL;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-
-import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 public class BuzzSteps {
 
-    //@LocalServerPort
-    private int port = 5000;
+    private int port;
 
     private RemoteWebDriver driver;
     private boolean remoteTesting;
 
     String lastPageText = "";
 
+    public BuzzSteps(int servicePort)
+    {
+        port = servicePort;
+    }
 
     @BeforeStory
     public void setup() throws Exception {
@@ -40,10 +39,34 @@ public class BuzzSteps {
         if(!envVar.equals("TRUE")) {
             driver = new SafariDriver();
         } else {
-            assertEquals(true,false);
-        }
+            remoteTesting = true;
+            URL executorUrl;
+            {
+                String userName = System.getenv("SAUCE_USERNAME");
+                String accessKey = System.getenv("SAUCE_ACCESS_KEY");
+                String hubUrl = String.format("http://%s:%s@localhost:4445/wd/hub", userName, accessKey);
+                executorUrl = new URL(hubUrl);
+            }
 
-        System.out.println("Constructor, Port = " + port);
+            DesiredCapabilities capabilities;
+            {
+                capabilities = DesiredCapabilities.safari();
+
+                capabilities.setCapability("platform", "Mac OS X 10.13");
+                capabilities.setCapability("browserName", "Safari");
+                capabilities.setCapability("version", "11.1");
+
+                String buildNumber = System.getenv("TRAVIS_BUILD_NUMBER");
+                capabilities.setCapability("build", buildNumber);
+
+                capabilities.setCapability("name", this.getClass().getSimpleName());
+
+                String tunnelId = System.getenv("TRAVIS_JOB_NUMBER");
+                capabilities.setCapability("tunnel-identifier", tunnelId);
+            }
+
+            driver = new RemoteWebDriver(executorUrl, capabilities);
+        }
     }
 
     @AfterStory
