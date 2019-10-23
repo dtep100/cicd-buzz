@@ -12,6 +12,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class BuzzSteps {
 
@@ -20,6 +21,8 @@ public class BuzzSteps {
 
     private RemoteWebDriver driver;
     private boolean remoteTesting;
+
+    String lastPageText = "";
 
 
     @BeforeStory
@@ -51,16 +54,27 @@ public class BuzzSteps {
         }
     }
 
+    private String getBodyText(){
+        String bodyText = driver.findElementByTagName("body").getText();
+        return(bodyText);
+    }
+
+    @Given("the Buzz page is loaded")
     @When("the Buzz page is loaded")
-    public void theBuzzPageIsLoaded()
-    {
+    public void theBuzzPageIsLoaded() {
+        lastPageText = getBodyText();
         driver.get("http://localhost:" + port);
     }
 
     @Then("the page title should be $title")
-    public void thenThePageTitleShouldBe(String title)
-    {
+    public void thenThePageTitleShouldBe(String title) {
         String pageTitle = driver.getTitle();
         assertEquals(title, pageTitle);
+    }
+
+    @Then("the page text should change")
+    public void thenThePageTextShouldChange(){
+        String newPageText = getBodyText();
+        assertNotEquals(lastPageText, newPageText);
     }
 }

@@ -9,6 +9,6 @@ When the Buzz page is loaded
 Then the page title should be CI/CD buzz generator
 
 Scenario: User loads Buzz page
-!-- Given the Buzz page is loaded
-!-- When the Buzz page is loaded
-!-- Then the page text should change
+Given the Buzz page is loaded
+When the Buzz page is loaded
+Then the page text should change
