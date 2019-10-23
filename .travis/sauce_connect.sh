@@ -27,8 +27,8 @@ $UNZIP_CMD $CONNECT_DOWNLOAD
 rm $CONNECT_DOWNLOAD
 cd $VERSION_STRING-$OS_STRING
 cd bin
-./sc -u $SAUCE_USERNAME -k $SAUCE_ACCESS_KEY -x https://eu-central-1.saucelabs.com/rest/v1 --readyfile $READY_FILE --tunnel-identifier $TRAVIS_JOB_NUMBER &
-
+./sc -u $SAUCE_USERNAME -k $SAUCE_ACCESS_KEY --readyfile $READY_FILE --tunnel-identifier $TRAVIS_JOB_NUMBER &
+#-x https://eu-central-1.saucelabs.com/rest/v1 << use this for EU accounts
 # Wait for Connect to be ready before exiting
 while [ ! -f $READY_FILE ]; do
   sleep .5
